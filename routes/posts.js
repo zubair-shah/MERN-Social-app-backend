@@ -6,7 +6,7 @@ import {
   updatePost,
   deletePost,
   getOnePost,
-} from "../controllers/posts.js";
+} from "#controllers/posts";
 const router = express.Router();
 router.get("/", myApp);
 router.get("/posts", getPost);

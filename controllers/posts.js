@@ -1,4 +1,4 @@
-import PostMessage from "../models/postMessage.js";
+import PostMessage from "#models/postMessage";
 
 export const myApp = (req, res) => {
   res.send("your app is running");
@@ -27,7 +27,7 @@ export const createPost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
   try {
-     const { id } = req.params;
+    const { id } = req.params;
     const post = req.body;
     console.log(post);
     const newPost = new PostMessage(post);

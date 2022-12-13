@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+  },
+  "include": ["/*.d.ts", "/*.js", "/*.svelte"],
+  "exclude": ["node_modules", "**/node_modules", "dist"]
+}

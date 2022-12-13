@@ -2,7 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
-import postRoutes from "./routes/posts.js";
+
+// ========routes=========
+import postRoutes from "#routes/posts";
+import authRoutes from "#routes/auth";
+// ====================================
 
 const app = express();
 
@@ -14,16 +18,17 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
-  next();                                                                                                                                                           
+  next();
 });
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use("/", postRoutes);
+app.use("/api/v1", authRoutes);
 
 const CONNECTION_URL =
   // "mongodb+srv://zubair:zubair@cluster0.xyyrftj.mongodb.net/?retryWrites=true&w=majority";
-"mongodb://localhost:27017";
+  "mongodb://localhost:27017/social-app";
 
 const PORT = process.env.PORT || 5000;
 
