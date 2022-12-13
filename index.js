@@ -14,7 +14,7 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
-  next();
+  next();                                                                                                                                                           
 });
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use("/", postRoutes);
 
 const CONNECTION_URL =
-  "mongodb+srv://zubair:zubair@cluster0.xyyrftj.mongodb.net/?retryWrites=true&w=majority";
-// "mongodb://localhost:27017";
+  // "mongodb+srv://zubair:zubair@cluster0.xyyrftj.mongodb.net/?retryWrites=true&w=majority";
+"mongodb://localhost:27017";
 
 const PORT = process.env.PORT || 5000;
 
