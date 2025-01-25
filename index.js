@@ -27,7 +27,6 @@ app.use("/", postRoutes);
 app.use("/api/v1", authRoutes);
 
 const CONNECTION_URL =
-  // "mongodb+srv://zubair:zubair@cluster0.xyyrftj.mongodb.net/?retryWrites=true&w=majority";
   "mongodb://localhost:27017/social-app";
 
 const PORT = process.env.PORT || 5000;
