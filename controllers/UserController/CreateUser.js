@@ -2,13 +2,13 @@ import Users from "#models/createUser";
 import bcrypt from "bcrypt";
 
 const createUserController = async (req, res) => {
-  const data = req.body;
-  console.log(JSON.parse(JSON.stringify(data)));
+  const data = JSON.parse(JSON.stringify(req.body));
+  console.log(data);
 
-  const db = await Users.findOne({ email: data.email });
+  const userAlready = await Users.findOne({ email: data.email });
   try {
-    if (db) {
-      res
+    if (userAlready) {
+      return res
         .status(409)
         .json({ status: false, message: "User have already an account" });
     }
